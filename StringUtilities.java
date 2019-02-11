@@ -84,7 +84,10 @@ public class StringUtilities {
         return charRemoveAt(value, position);
     }
     public static String charRemoveAt(String str, int position) {  
-              return str.substring(0, position) + str.substring(position + 1);  
+        if (position ==0)
+              {return  str.substring(position + 1);}
+              else {
+                  return str.substring(0, position) + str.substring(position + 1);}
      }  
     
 

@@ -54,17 +54,18 @@ public class LoopFun
                 if (i == 0) {
                     char c = a[i];
                     b = Character.toString(c);
-                    return  b;
+                    
                 }
                 else if (a [i-1] == ' ' ){
                    char c = a[i];
                    b = Character.toString(c);
-                   return  b; }   
+                     
                         
-            }
-       
-        }    return b;
-      }
+            }       
+             }    
+          }
+          return b;
+        }
       
 
       /**
@@ -82,6 +83,31 @@ public class LoopFun
        * @return the encrypted string by shifting each character by three character
        */
       public String encrypt(String word) {
-          return null;
-      }
-}
+          
+          String encripted = "";
+          char[] charArray = word.toCharArray();
+
+        for (int i = 0; i < charArray.length; i++) {
+
+            if((charArray[i] >= 'x' && charArray[i] <= 'z') 
+                    || ((charArray[i] >= 'X' && charArray[i] <= 'Z'))) {
+                
+                charArray[i] = (char) (charArray[i] - 23);
+
+            } else if ((charArray[i] >= 'a' && charArray[i] <= 'w') 
+                    || ((charArray[i] >= 'A' && charArray[i] <= 'W'))) {
+                
+                charArray[i] = (char) (charArray[i] + 3);
+            }
+            encripted+=charArray[i];
+        }
+
+        return encripted;
+    }
+
+
+    
+          
+        
+    }
+
